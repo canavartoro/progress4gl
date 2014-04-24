@@ -1,0 +1,12 @@
+-db uyum2011
+-N TCP
+-H 192.168.0.20
+-S 30030
+-ld entegre
+-s 20000
+-db log2011
+-N TCP
+-H 192.168.0.20
+-S 30130
+-ld uyumlog
+-T c:\winnt\temp

@@ -1,0 +1,40 @@
+/**********************
+***********************/
+
+   DEF TEMP-TABLE Istasyonlar
+      FIELD IstasyonId AS INTEGER
+      FIELD IstasyonKod AS CHARACTER FORMAT "X(32)":U 
+      FIELD IstasyonAd AS CHARACTER FORMAT "X(127)":U 
+      FIELD Aciklama AS CHARACTER FORMAT "X(127)":U 
+      FIELD FasonIstasyon AS LOGICAL        
+      FIELD IsIstasyonTipId AS CHARACTER FORMAT "X(255)":U 
+      FIELD CokluUretim AS LOGICAL 
+      FIELD ArayaIsSokma AS LOGICAL
+      FIELD IsMerkeziId AS INTEGER
+      FIELD IsMerkeziKod AS CHARACTER FORMAT "X(255)":U
+      FIELD IsMerkeziAd AS CHARACTER FORMAT "X(255)":U
+      FIELD DepoId AS INTEGER
+      FIELD DepoKod AS CHARACTER 
+      FIELD DepoId2 AS INTEGER
+      FIELD DepoKod2 AS CHARACTER
+      FIELD DepoId3 AS INTEGER
+      FIELD DepoKod3 AS CHARACTER
+      FIELD CariId AS INTEGER
+      FIELD CariKod AS CHARACTER
+      FIELD CariAd AS CHARACTER.
+      
+   
+DEFINE DATASET IstasyonlarDS FOR Istasyonlar.
+DEFINE OUTPUT PARAMETER DATASET FOR IstasyonlarDS.
+
+DEFINE INPUT PARAMETER  xKod AS CHARACTER FORMAT "X(40)".
+DEFINE INPUT PARAMETER  xAd AS CHARACTER FORMAT "X(80)".
+DEFINE INPUT PARAMETER  xFason AS LOGICAL.
+DEFINE INPUT PARAMETER Firma AS CHARACTER INITIAL "ARMA2011".
+DEFINE INPUT PARAMETER Limit AS INTEGER INITIAL 100.
+
+{Include3\Baglanti.i}
+
+RUN Istasyonlar_run (
+    OUTPUT TABLE Istasyonlar, 
+    INPUT xKod, INPUT xAd, INPUT xFason, INPUT Firma, INPUT Limit).

@@ -1,0 +1,27 @@
+
+
+/**********************
+***********************/
+
+   DEF TEMP-TABLE Duruslar
+      FIELD DurusId AS INTEGER
+      FIELD DurusKod AS CHARACTER /*FORMAT "X(32)":U*/ 
+      FIELD DurusAd AS CHARACTER /*FORMAT "X(127)":U */
+      FIELD IsEmriBaglanti AS LOGICAL
+      FIELD DurusTip AS CHARACTER /*FORMAT "X(32)":U*/.
+      
+DEFINE DATASET DuruslarDS FOR Duruslar.
+DEFINE OUTPUT PARAMETER DATASET FOR DuruslarDS. 
+
+DEFINE INPUT PARAMETER xKod AS CHARACTER.
+DEFINE INPUT PARAMETER xAd AS CHARACTER.
+DEFINE INPUT PARAMETER Firma AS CHARACTER INITIAL "ARMA2011".
+DEFINE INPUT PARAMETER Limit AS INTEGER INITIAL 100.
+
+{Include3\Baglanti.i}
+
+RUN Duruslar_run (OUTPUT TABLE Duruslar, INPUT xKod, INPUT xAd, INPUT Firma, INPUT Limit).
+
+
+
+

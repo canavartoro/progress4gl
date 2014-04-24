@@ -1,0 +1,1373 @@
+
+**  ProxyGen, Progress Version 10.1B
+
+** Checking for existence of .r files ...
+
+** Processing non-persistent procedures ...
+
+** Processing: C:\OpenEdge\BarsetProxy\Aletler.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Aletler.p 
+          OUTPUT AletlerDS DATASET
+          INPUT xKod CHARACTER
+          INPUT xAciklama CHARACTER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: Aletler
+          AletId integer
+          AletKod character
+          AletAd character
+          Aciklama character
+          GrupKod character
+          DepoKod character
+          RafKod character
+          DemirBasKod character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\ALIS_IRS.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\BarsetProxy\Prosedurler\ALIS_IRS.p 
+          INPUT fkod CHARACTER
+          INPUT ukod CHARACTER
+          INPUT bno CHARACTER
+          INPUT btarih CHARACTER
+          INPUT fiilitestlimtarih CHARACTER
+          INPUT alis_satis CHARACTER
+          INPUT cari CHARACTER
+          INPUT hkod CHARACTER
+          INPUT Aciklama1 CHARACTER
+          INPUT Aciklama2 CHARACTER
+          INPUT AlisIrsaliyeDS DATASET
+          OUTPUT master_no INTEGER
+          OUTPUT detay_satir INTEGER
+          OUTPUT islem_sonucu CHARACTER
+       TABLE: xdetay_table
+          stok_kod character
+          hareket_miktar decimal
+          Birim character
+          sip_detayno integer
+          smaster integer
+          PartiNo character
+          SonKul character
+          OzKod1 character
+          Acikla1 character
+          Acikla2 character
+          Acikla3 character
+          sira integer
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\Araclar.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Araclar.p 
+          OUTPUT NakliyecilerDS DATASET
+          INPUT xId INTEGER
+          INPUT xNakliyeciKod CHARACTER
+          INPUT xAracKod CHARACTER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: Nakliyeciler
+          NakliyeciId integer
+          NakliyeciKod character
+          AracKod character
+          PlakaNo character
+          Surucu character
+          AgirilikKapasite decimal
+          HacimKapasite decimal
+          AracTel character
+          CepTel character
+          Acikalama character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\BirimGuncelle.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\BirimGuncelle.p 
+          INPUT MalzemeBirimId INTEGER
+          INPUT Oran DECIMAL
+          INPUT Oran2 DECIMAL
+          OUTPUT IslemSonucu LOGICAL
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\Cariler.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Cariler.p 
+          OUTPUT CarilerDS DATASET
+          INPUT xId INTEGER
+          INPUT xId2 INTEGER
+          INPUT xKod CHARACTER
+          INPUT xAd CHARACTER
+          INPUT xAciklama CHARACTER
+          INPUT xKod1 CHARACTER
+          INPUT xKod2 CHARACTER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: Cariler
+          CariId integer
+          CariKod character
+          CariAd character
+          KisaAd character
+          BolgeKod character
+          Adres1 character
+          Adres2 character
+          Adres3 character
+          FaturaAdres1 character
+          FaturaAdres2 character
+          FaturaAdres3 character
+          VarigDaire character
+          VergiNo character
+          GrupKod character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\Depolar.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Depolar.p 
+          OUTPUT DepolarDS DATASET
+          INPUT xKod CHARACTER
+          INPUT xAd CHARACTER
+          INPUT xAciklama CHARACTER
+          INPUT xHurda LOGICAL
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: Depolar
+          DepoId integer
+          DepoKod character
+          DepoAd character
+          Aciklama character
+          Barkod character
+          Hurda logical
+          Fason logical
+          EksiStok logical
+          HaricDepo logical
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\Duruslar.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Duruslar.p 
+          OUTPUT DuruslarDS DATASET
+          INPUT xKod CHARACTER
+          INPUT xAd CHARACTER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: Duruslar
+          DurusId integer
+          DurusKod character
+          DurusAd character
+          IsEmriBaglanti logical
+          DurusTip character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\ErpReceteDegistir.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\ErpReceteDegistir.p 
+          INPUT fkod CHARACTER
+          INPUT ukod CHARACTER
+          INPUT IsEmriNo CHARACTER
+          INPUT MalzemeKod CHARACTER
+          INPUT MalzemeKod2 CHARACTER
+          INPUT ReceteKod CHARACTER
+          INPUT Tip LOGICAL
+          INPUT Birim CHARACTER
+          INPUT Miktar DECIMAL
+          INPUT Aciklama CHARACTER
+          OUTPUT IslemSonucu CHARACTER
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\FasonCikisSil.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\BarsetProxy\Prosedurler\FasonCikisSil.p 
+          INPUT xFirmaKod CHARACTER
+          INPUT xUserKod CHARACTER
+          INPUT xLogFile CHARACTER
+          INPUT xKayitId INTEGER
+          OUTPUT IslemSonucu CHARACTER
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\FasonDonus.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\BarsetProxy\Prosedurler\FasonDonus.p 
+          INPUT xFirmaKod CHARACTER
+          INPUT xUserKod CHARACTER
+          INPUT xDepoKod CHARACTER
+          INPUT xIstasyonKod CHARACTER
+          INPUT xBelgeTarih CHARACTER
+          INPUT xHareketKod CHARACTER
+          INPUT xBelgeNo CHARACTER
+          INPUT xKayitId INTEGER
+          INPUT FasonGelisDS DATASET
+          OUTPUT MasterNo DECIMAL
+          OUTPUT DetaySatir INTEGER
+          OUTPUT IslemSonucu CHARACTER
+       TABLE: FasonGelis
+          IsEmriNo character
+          OperasyonKod character
+          MalzemeKod character
+          PartiKod character
+          Miktar decimal
+          Tamamlandi logical
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\FasonDonusSil.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\BarsetProxy\Prosedurler\FasonDonusSil.p 
+          INPUT xFirmaKod CHARACTER
+          INPUT xUserKod CHARACTER
+          INPUT xLogFile CHARACTER
+          INPUT xKayitId INTEGER
+          OUTPUT IslemSonucu CHARACTER
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\FasonGidis.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\BarsetProxy\Prosedurler\FasonGidis.p 
+          INPUT xFirmaKod CHARACTER
+          INPUT xUserKod CHARACTER
+          INPUT xBelgeNo CHARACTER
+          INPUT xDepoKod CHARACTER
+          INPUT xIstasyonKod CHARACTER
+          INPUT xIsEmriNo CHARACTER
+          INPUT xOperasyonKod CHARACTER
+          INPUT xPartiKod CHARACTER
+          INPUT xBelgeTarih CHARACTER
+          INPUT xGonderimTamam LOGICAL
+          INPUT xMiktar DECIMAL
+          INPUT xKayitId INTEGER
+          INPUT FasonGidisDS DATASET
+          OUTPUT MasterNo DECIMAL
+          OUTPUT DetaySatir INTEGER
+          OUTPUT IslemSonucu CHARACTER
+       TABLE: FasonGidis
+          MalzemeKod character
+          Miktar decimal
+          PartiNo character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\FiiliSayimKaydet.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\FiiliSayimKaydet.p 
+          INPUT SayimlarDS DATASET
+          INPUT fkod CHARACTER
+          INPUT ukod CHARACTER
+          INPUT bno CHARACTER
+          INPUT btarih CHARACTER
+          INPUT depokod CHARACTER
+          OUTPUT master_no DECIMAL
+          OUTPUT detay_satir INTEGER
+          OUTPUT islem_sonucu CHARACTER
+       TABLE: xsay_table
+          stok_kod character
+          miktar decimal
+          parti_kod character
+          renk_no character
+          kalite_kod character
+          ozellik_kod1 character
+          ozellik_kod2 character
+          ozellik_kod3 character
+          raf_kod character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\hareket_stok.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\BarsetProxy\Prosedurler\hareket_stok.p 
+          INPUT fkod CHARACTER
+          INPUT ukod CHARACTER
+          INPUT bno CHARACTER
+          INPUT btarih CHARACTER
+          INPUT hkod CHARACTER
+          INPUT aciklama CHARACTER
+          INPUT StokHareketDS DATASET
+          OUTPUT master_no INTEGER
+          OUTPUT detay_satir INTEGER
+          OUTPUT islem_sonucu CHARACTER
+       TABLE: xhareket_table
+          stok_kod character
+          giren_depo character
+          cikan_depo character
+          miktar decimal
+          gelir_gider character
+          masraf_ad character
+          masraf_merkez character
+          analiz_kod character
+          parti_kod character
+          cari character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\Hareketler.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Hareketler.p 
+          OUTPUT HareketlerDS DATASET
+          INPUT xHareketKod CHARACTER
+          INPUT xHareketAd CHARACTER
+          INPUT xAciklama CHARACTER
+          INPUT xAlisSatis CHARACTER
+          INPUT xKaynakProgram CHARACTER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: Hareketler
+          HareketKod character
+          HareketAd character
+          Aciklama character
+          HareketTur character
+          OzelKod character
+          HedefRaf character
+          HedefDepo character
+          KaynakRaf character
+          KaynakDepo character
+          GirisCikis character
+          CariZorunlu character
+          IrsaliyeZorunlu logical
+          IsemriZorunlu character
+          AlisSatis character
+          Iade character
+          Fason character
+          HareketTanimId integer
+          HareketTurId integer
+          HedefRafId integer
+          KaynakRafId integer
+          HedefDepoId integer
+          KaynakDepoId integer
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\Hurdalar.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Hurdalar.p 
+          OUTPUT HurdalarDS DATASET
+          INPUT xKod CHARACTER
+          INPUT xAd CHARACTER
+          INPUT xAciklama CHARACTER
+          INPUT xBilesen LOGICAL
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: Hurdalar
+          HurdaId integer
+          HurdaKod character
+          HurdaAd character
+          HurdaAciklama character
+          HammaddeTuket logical
+          BilesenHurda logical
+          TransferYap logical
+          HareketId integer
+          HareketKod character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\IrsaliyeKaydi.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\BarsetProxy\Prosedurler\IrsaliyeKaydi.p 
+          INPUT FirmaKod CHARACTER
+          INPUT KullaniciKod CHARACTER
+          INPUT KayitId INTEGER
+          INPUT BelgeNo CHARACTER
+          INPUT BelgeTarih CHARACTER
+          INPUT HareketKod CHARACTER
+          INPUT DigerDepo CHARACTER
+          INPUT CariKod CHARACTER
+          INPUT Aciklama CHARACTER
+          INPUT AdresKod CHARACTER
+          INPUT xIrsaliyeDetayDS DATASET
+          OUTPUT MasterNo INTEGER
+          OUTPUT DetaySatir INTEGER
+          OUTPUT IslemSonucu CHARACTER
+       TABLE: xIrsaliyeDetay
+          StokKodu character
+          PartiNo character
+          Birim character
+          Miktar decimal
+          DepoKod character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\IsEmirleri.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\IsEmirleri.p 
+          OUTPUT V_IsEmirleriDS DATASET
+          INPUT xEmir CHARACTER
+          INPUT xKod CHARACTER
+          INPUT xAd CHARACTER
+          INPUT xistkod CHARACTER
+          INPUT xoprkod CHARACTER
+          INPUT xFason LOGICAL
+          INPUT xsirano INTEGER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: V_IsEmirleri
+          IsEmriId integer
+          IsEmriDetayId integer
+          IsEmriNo character
+          ReceteId integer
+          MalzemeId integer
+          MalzemeKodu character
+          MalzemeAdi character
+          BirimId integer
+          BirimKodu character
+          PlanlananMiktar decimal
+          UretilenMiktar decimal
+          UretilenNetMiktar decimal
+          FireMiktari decimal
+          TransferEdilebilecekMiktari decimal
+          IstasyonId integer
+          IstasyonKodu character
+          IstasyonAdi character
+          RotaId integer
+          RotaKod character
+          OperasyonId integer
+          OperasyonNo integer
+          OperasyonKodu character
+          OperasyonAdi character
+          IsMerkeziId integer
+          IsMerkeziKodu character
+          IsMerkeziAdi character
+          Aciklama character
+          DigerId integer
+          IsEmriTipId integer
+          IsEmriTipKodu character
+          IsEmriTipAdi character
+          OzelKod character
+          DigerKod1 character
+          BaslangicTarihi character
+          BaslangicSaat character
+          BitisTarihi character
+          BitisSaat character
+          AcilmaTarihi character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\IsEmriDetaylari.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\IsEmriDetaylari.p 
+          OUTPUT V_IsEmirleriDS DATASET
+          INPUT xEmir CHARACTER
+          INPUT xKod CHARACTER
+          INPUT xAd CHARACTER
+          INPUT xistkod CHARACTER
+          INPUT xoprkod CHARACTER
+          INPUT xFason LOGICAL
+          INPUT xsirano INTEGER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: V_IsEmirleri
+          IsEmriId integer
+          IsEmriDetayId integer
+          IsEmriNo character
+          ReceteId integer
+          MalzemeId integer
+          MalzemeKodu character
+          MalzemeAdi character
+          BirimId integer
+          BirimKodu character
+          PlanlananMiktar decimal
+          UretilenMiktar decimal
+          UretilenNetMiktar decimal
+          FireMiktari decimal
+          TransferEdilebilecekMiktari decimal
+          IstasyonId integer
+          IstasyonKodu character
+          IstasyonAdi character
+          RotaId integer
+          RotaKod character
+          OperasyonId integer
+          OperasyonNo integer
+          OperasyonKodu character
+          OperasyonAdi character
+          IsMerkeziId integer
+          IsMerkeziKodu character
+          IsMerkeziAdi character
+          Aciklama character
+          DigerId integer
+          IsEmriTipId integer
+          IsEmriTipKodu character
+          IsEmriTipAdi character
+          OzelKod character
+          DigerKod1 character
+          BaslangicTarihi character
+          BaslangicSaat character
+          BitisTarihi character
+          BitisSaat character
+          AcilmaTarihi character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\IsEmriReceteleri.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\IsEmriReceteleri.p 
+          OUTPUT RecetelerDS DATASET
+          INPUT xIsEmri CHARACTER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: V_Receteler
+          ReceteId integer
+          IsEmriId integer
+          IsEmriNo character
+          IsEmriMiktar decimal
+          SatirNo integer
+          BirimId integer
+          Birim character
+          MalzemeId integer
+          MalzemeKod character
+          MalzemeAd character
+          OperasyonId integer
+          OperasyonNo integer
+          OperasyonKod character
+          BirimMiktar decimal
+          NetMiktar decimal
+          OzelKod character
+          PartiKod character
+          MiktarSekli logical
+          HammaddeTakip integer
+          UstMalzemeId integer
+          UstMalzemeKod character
+          UstMalzemeAd character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\Istasyonlar.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Istasyonlar.p 
+          OUTPUT IstasyonlarDS DATASET
+          INPUT xKod CHARACTER
+          INPUT xAd CHARACTER
+          INPUT xFason LOGICAL
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: Istasyonlar
+          IstasyonId integer
+          IstasyonKod character
+          IstasyonAd character
+          Aciklama character
+          FasonIstasyon logical
+          IsIstasyonTipId character
+          CokluUretim logical
+          ArayaIsSokma logical
+          IsMerkeziId integer
+          IsMerkeziKod character
+          IsMerkeziAd character
+          DepoId integer
+          DepoKod character
+          DepoId2 integer
+          DepoKod2 character
+          DepoId3 integer
+          DepoKod3 character
+          CariId integer
+          CariKod character
+          CariAd character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\irs_delete.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\irs_delete.p 
+          INPUT fkod CHARACTER
+          INPUT ukod CHARACTER
+          INPUT bno CHARACTER
+          OUTPUT barset_belge CHARACTER
+          OUTPUT islem_sonucu CHARACTER
+          OUTPUT rmaster_no INTEGER
+          INPUT master_no INTEGER
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\irs_select.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\irs_select.p 
+          INPUT fkod CHARACTER
+          INPUT ukod CHARACTER
+          INPUT btarih CHARACTER
+          OUTPUT islem_sonucu CHARACTER
+          OUTPUT IrsaliyelerDS DATASET
+       TABLE: irs_master
+          belge_no character
+          belge_tarih character
+          hareket_kod character
+          aciklama character
+          mal_tutar decimal
+          kdv_tutar decimal
+          irsaliye_tutar decimal
+          irsaliye_master integer
+          xbelge_no character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\KaliteBelgeleri.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\KaliteBelgeleri.p 
+          OUTPUT KaliteBelgeleriDS DATASET
+          INPUT Firma CHARACTER
+          INPUT xCari CHARACTER
+          INPUT xBelge CHARACTER
+          INPUT xStok CHARACTER
+          INPUT Limit INTEGER
+       TABLE: V_KaliteBelgeleri
+          StokKod character
+          StokAd character
+          Birim character
+          GMiktar decimal
+          CMiktar decimal
+          DepoKod character
+          OnayKod character
+          Durum character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\log_oku.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\BarsetProxy\Prosedurler\log_oku.p 
+          INPUT bno CHARACTER
+          OUTPUT okunan CHARACTER
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\Login.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Login.p 
+          INPUT FirmaKod CHARACTER
+          INPUT Parola CHARACTER
+          INPUT KullaniciKod CHARACTER
+          INPUT LogDosyasi CHARACTER
+          OUTPUT islem_sonucu CHARACTER
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\MalzemeBirimler.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\MalzemeBirimler.p 
+          OUTPUT MalzemeBirimDS DATASET
+          INPUT AraBirimKod CHARACTER
+          INPUT AraMalzemeKod CHARACTER
+          INPUT AraMalzemeId INTEGER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: MalzemeBirim
+          MalzemeBirimId integer
+          BirimId integer
+          BirimKod character
+          MalzemeId integer
+          MalzemeKod character
+          Miktar decimal
+          Miktar2 decimal
+          SiraNo integer
+          En decimal
+          Boy decimal
+          Yukekseklik decimal
+          Hacim decimal
+          Agirlik decimal
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\Malzemeler.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Malzemeler.p 
+          OUTPUT MalzemelerDS DATASET
+          INPUT xkod CHARACTER
+          INPUT xad CHARACTER
+          INPUT xaciklama CHARACTER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: Malzemeler
+          MalzemeKod character
+          MalzemeAd character
+          MalzemeAd2 character
+          Birim character
+          KdvOran decimal
+          MinStok decimal
+          MaxStok decimal
+          FazlaSipOran decimal
+          BirimId integer
+          MalzemeId integer
+          HammaddeTakip integer
+          Tip integer
+          TipKod character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\Nakliyeciler.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Nakliyeciler.p 
+          OUTPUT NakliyecilerDS DATASET
+          INPUT xId INTEGER
+          INPUT xNakliyeciKod CHARACTER
+          INPUT xAracKod CHARACTER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: Nakliyeciler
+          NakliyeciId integer
+          NakliyeciKod character
+          AracKod character
+          PlakaNo character
+          Surucu character
+          AgirilikKapasite decimal
+          HacimKapasite decimal
+          AracTel character
+          CepTel character
+          Acikalama character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\NakliyeTipleri.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\NakliyeTipleri.p 
+          OUTPUT NakliyecilerDS DATASET
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: Nakliyeciler
+          NakliyeciId integer
+          NakliyeciKod character
+          AracKod character
+          PlakaNo character
+          Surucu character
+          AgirilikKapasite decimal
+          HacimKapasite decimal
+          AracTel character
+          CepTel character
+          Acikalama character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\Personeller.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Personeller.p 
+          OUTPUT PersonellerDS DATASET
+          INPUT xkod CHARACTER
+          INPUT xad CHARACTER
+          INPUT xsoyad CHARACTER
+          INPUT xdepartman CHARACTER
+          INPUT xgorevkod CHARACTER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: Personeller
+          PersonelId integer
+          PersonelKod character
+          PersonelAdi character
+          PersonelSoyad character
+          DepartmanKod character
+          GorevKod character
+          IsyeriKod character
+          Aciklama character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\RafHareket.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\RafHareket.p 
+          INPUT FirmaKod CHARACTER
+          INPUT Kullanici CHARACTER
+          INPUT GirenDepoKod CHARACTER
+          INPUT CikanDepoKod CHARACTER
+          INPUT BelgeNo CHARACTER
+          INPUT BelgeTarih CHARACTER
+          INPUT RafHareketDS DATASET
+          OUTPUT MasterNo INTEGER
+          OUTPUT DetaySatir INTEGER
+          OUTPUT IslemSonucu CHARACTER
+       TABLE: RafHareket
+          GirenDepoKod character
+          CikanDepoKod character
+          GirenRafKod character
+          CikanRafKod character
+          StokKod character
+          RenkKod character
+          Birim character
+          Miktar decimal
+          PartiKod character
+          Aciklama character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\Raflar.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Raflar.p 
+          OUTPUT RaflarDS DATASET
+          INPUT FirmaKod CHARACTER
+          INPUT DepoId INTEGER
+          INPUT DepoKod CHARACTER
+          INPUT RafKod CHARACTER
+          INPUT hiyer_arsi INTEGER
+          INPUT limit INTEGER
+       TABLE: Raflar
+          DepoId integer
+          DepoKod character
+          DepoAd character
+          RafId integer
+          RafKod character
+          Aciklama character
+          HiyerArsi integer
+          Seviye integer
+          Rapor logical
+          Barkod character
+          Sayim logical
+          EksiStok logical
+          Sevkiyat logical
+          IstasyonMu logical
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\SevkEmirleri.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\SevkEmirleri.p 
+          OUTPUT SevkEmirleriDS DATASET
+          INPUT xCariKod CHARACTER
+          INPUT xCariAd CHARACTER
+          INPUT xGrupKod CHARACTER
+          INPUT xSevkEmirNo CHARACTER
+          INPUT xDepogoster LOGICAL
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: SevkEmirleri
+          SevkEmirNo character
+          CariKod character
+          CariAd character
+          Aciklama character
+          SevkEmriId integer
+          CariId integer
+          YuklemeTarih character
+          CariGrup character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\SevkEmriDetaylari.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\SevkEmriDetaylari.p 
+          OUTPUT SevkEmriDetaylariDS DATASET
+          INPUT xSevkEmriId INTEGER
+          INPUT xSevkEmriNo CHARACTER
+          INPUT xDepoStok LOGICAL
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: SevkEmriDetaylari
+          SevkEmirNo character
+          CariKod character
+          CariAd character
+          MalzemeKod character
+          MalzemeAd character
+          CariMalzemeKod character
+          Birim character
+          Miktar decimal
+          Okunan decimal
+          Kalan decimal
+          StokMiktar decimal
+          OzelKod character
+          DepoKod character
+          SiparisNo character
+          SevkEmriId integer
+          SevkEmriDetayId integer
+          CariId integer
+          MalzemeId integer
+          BirimId integer
+          SiraNo integer
+          DepoId integer
+          HizmetKartId integer
+          TeslimTarih character
+          Aciklama character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\SevkEmriSevk.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\SevkEmriSevk.p 
+          INPUT fkod CHARACTER
+          INPUT ukod CHARACTER
+          INPUT bno CHARACTER
+          INPUT btarih CHARACTER
+          INPUT fiilitestlimtarih CHARACTER
+          INPUT hkod CHARACTER
+          INPUT nakliyetip CHARACTER
+          INPUT nakliyecikod CHARACTER
+          INPUT arackod CHARACTER
+          INPUT aciklama CHARACTER
+          INPUT s_adres1 CHARACTER
+          INPUT s_adres2 CHARACTER
+          INPUT s_adres3 CHARACTER
+          INPUT SevklerDS DATASET
+          OUTPUT master_no DECIMAL
+          OUTPUT detay_satir INTEGER
+          OUTPUT islem_sonucu CHARACTER
+       TABLE: xsevk_table
+          semir_masterno integer
+          semir_detayno integer
+          dmiktar decimal
+          partino character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\SiparisOkunanlarCari.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\SiparisOkunanlarCari.p 
+          OUTPUT SiparisOkunanlarDS DATASET
+          INPUT xCariKod CHARACTER
+          INPUT xStokKod CHARACTER
+          INPUT xStokAd CHARACTER
+          INPUT xCStokKod CHARACTER
+          INPUT xSipNo CHARACTER
+          INPUT xAlisSatis CHARACTER
+          INPUT xDepogoster LOGICAL
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: V_SiparisOkunanlar
+          MalzemeAd character
+          MalzemeKod character
+          CariMalzemeKod character
+          BirimKod character
+          Miktar decimal
+          Okunan decimal
+          Kalan decimal
+          OzelKod character
+          SiparisId integer
+          SiparisDetayId integer
+          CariId integer
+          BirimId decimal
+          MalzemeId integer
+          SiraNo integer
+          DepoId integer
+          HizmetKartId integer
+          SatirTipi integer
+          TeslimTarihi character
+          DepoKod character
+          SiparisNo character
+          FazlaSipMiktar decimal
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\StokHareket.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\BarsetProxy\Prosedurler\StokHareket.p 
+          INPUT FirmaKod CHARACTER
+          INPUT KullaniciKod CHARACTER
+          INPUT BelgeNo CHARACTER
+          INPUT BelgeTarih CHARACTER
+          INPUT HareketKod CHARACTER
+          INPUT DepoKod CHARACTER
+          INPUT DigerDepo CHARACTER
+          INPUT CariKod CHARACTER
+          INPUT Aciklama CHARACTER
+          INPUT xStokHareketDS DATASET
+          OUTPUT MasterNo INTEGER
+          OUTPUT DetaySatir INTEGER
+          OUTPUT IslemSonucu CHARACTER
+       TABLE: xStokHareket
+          StokKod character
+          Birim character
+          Miktar decimal
+          GelirGider character
+          MasrafAd character
+          MasrafMerkez character
+          AnalizKod character
+          PartiKod character
+          Aciklama character
+          Aciklama2 character
+          Aciklama3 character
+          IslemNedeni character
+          IslemNedenAd character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\StokHareketSil.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\BarsetProxy\Prosedurler\StokHareketSil.p 
+          INPUT xFirmaKod CHARACTER
+          INPUT xUserKod CHARACTER
+          INPUT xLogFile CHARACTER
+          INPUT xKayitId INTEGER
+          OUTPUT IslemSonucu CHARACTER
+          OUTPUT DetaySatir INTEGER
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\UretimKaydi.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\BarsetProxy\Prosedurler\UretimKaydi.p 
+          INPUT fkod CHARACTER
+          INPUT ukod CHARACTER
+          INPUT logfile CHARACTER
+          INPUT partikod CHARACTER
+          INPUT OperasyonDS DATASET
+          INPUT IscilikDS DATASET
+          INPUT DurusDS DATASET
+          INPUT HurdaDS DATASET
+          INPUT AletDS DATASET
+          INPUT MalzemeDS DATASET
+          OUTPUT master_no DECIMAL
+          OUTPUT detay_satir INTEGER
+          OUTPUT islem_sonucu CHARACTER
+       TABLE: xop_table
+          kayit_no character
+          isemri_no character
+          operasyon_kod character
+          istasyon_kod character
+          bas_tarihi character
+          bas_saati character
+          bit_tarihi character
+          bit_saati character
+          miktar decimal
+          kat_sayi decimal
+          kat_sayi2 decimal
+          vardiya_kod character
+          skk_no character
+          aciklama1 character
+          aciklama2 character
+          aciklama3 character
+          aciklama4 character
+          aciklama5 character
+          aciklama6 character
+       TABLE: xis_table
+          ukayit_no character
+          personel_kod character
+          bas_tarihi character
+          bas_saati character
+          bit_tarihi character
+          bit_saati character
+          aciklama character
+       TABLE: xdur_table
+          ukayit_no character
+          durus_kod character
+          tezgah_kod character
+          baslangic character
+          bas_saati character
+          bit_tarihi character
+          bit_saati character
+          aciklama character
+          sure integer
+          sirano integer
+       TABLE: xhur_table
+          ukayit_no character
+          hurda_skod character
+          hurda_sbirim character
+          hurda_kod character
+          aciklama character
+          diger_depo character
+          parti_kod character
+          miktar decimal
+       TABLE: xalet_table
+          ukayit_no character
+          platform_kod character
+          platform_ad character
+       TABLE: Malzemeler
+          Alternatif logical
+          DepoKod character
+          MalzemeKod character
+          MalzemeKod2 character
+          Birim character
+          KMiktar decimal
+          FMiktar decimal
+          PartiNo character
+          MiktarSekli integer
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\UretimKaydiGuncelle.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\BarsetProxy\Prosedurler\UretimKaydiGuncelle.p 
+          INPUT fkod CHARACTER
+          INPUT ukod CHARACTER
+          INPUT logfile CHARACTER
+          INPUT partikod CHARACTER
+          INPUT KayitDS DATASET
+          INPUT OperasyonDS DATASET
+          INPUT IscilikDS DATASET
+          INPUT DurusDS DATASET
+          INPUT HurdaDS DATASET
+          INPUT AletDS DATASET
+          INPUT MalzemeDS DATASET
+          OUTPUT master_no DECIMAL
+          OUTPUT detay_satir INTEGER
+          OUTPUT islem_sonucu CHARACTER
+       TABLE: xop_table
+          kayit_no character
+          isemri_no character
+          operasyon_kod character
+          istasyon_kod character
+          bas_tarihi character
+          bas_saati character
+          bit_tarihi character
+          bit_saati character
+          miktar decimal
+          kat_sayi decimal
+          kat_sayi2 decimal
+          vardiya_kod character
+          skk_no character
+          aciklama1 character
+          aciklama2 character
+          aciklama3 character
+          aciklama4 character
+          aciklama5 character
+          aciklama6 character
+       TABLE: xis_table
+          ukayit_no character
+          personel_kod character
+          bas_tarihi character
+          bas_saati character
+          bit_tarihi character
+          bit_saati character
+          aciklama character
+       TABLE: xdur_table
+          ukayit_no character
+          durus_kod character
+          tezgah_kod character
+          baslangic character
+          bas_saati character
+          bit_tarihi character
+          bit_saati character
+          aciklama character
+          sure integer
+          sirano integer
+       TABLE: xhur_table
+          ukayit_no character
+          hurda_skod character
+          hurda_sbirim character
+          hurda_kod character
+          aciklama character
+          diger_depo character
+          parti_kod character
+          miktar decimal
+       TABLE: xalet_table
+          ukayit_no character
+          platform_kod character
+          platform_ad character
+       TABLE: Malzemeler
+          Alternatif logical
+          DepoKod character
+          MalzemeKod character
+          MalzemeKod2 character
+          Birim character
+          KMiktar decimal
+          FMiktar decimal
+          PartiNo character
+          MiktarSekli integer
+       TABLE: xkayit_table
+          Malzemeler logical
+          Iscilikler logical
+          Duruslar logical
+          Hurdalar logical
+          Aletler logical
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\UretimKaydiSil.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\BarsetProxy\Prosedurler\UretimKaydiSil.p 
+          INPUT fkod CHARACTER
+          INPUT ukod CHARACTER
+          INPUT logfile CHARACTER
+          INPUT master_no RECID
+          INPUT kayit_id INTEGER
+          OUTPUT islem_sonucu CHARACTER
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\V_Siparisler.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\V_Siparisler.p 
+          OUTPUT SiparislerDS DATASET
+          INPUT xId INTEGER
+          INPUT xId2 INTEGER
+          INPUT xCariKod CHARACTER
+          INPUT xCariAd CHARACTER
+          INPUT xSipNo CHARACTER
+          INPUT xAlisSatis CHARACTER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: V_Siparisler
+          SiparisNo character
+          CariKod character
+          CariAd character
+          Aciklama character
+          AlisSatis character
+          DepoKodu character
+          SiparisTarihi character
+          SevkTarihi character
+          TeslimTarihi character
+          SiparisId integer
+          CariId integer
+          DepoId integer
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\V_SiparisOkunanlar.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\V_SiparisOkunanlar.p 
+          OUTPUT SiparisOkunanlarDS DATASET
+          INPUT xId INTEGER
+          INPUT xId2 INTEGER
+          INPUT xCariKod CHARACTER
+          INPUT xCariAd CHARACTER
+          INPUT xSipNo CHARACTER
+          INPUT xAlisSatis CHARACTER
+          INPUT xDepogoster LOGICAL
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: V_SiparisOkunanlar
+          MalzemeAd character
+          MalzemeKod character
+          CariMalzemeKod character
+          BirimKod character
+          Miktar decimal
+          Okunan decimal
+          Kalan decimal
+          OzelKod character
+          SiparisId integer
+          SiparisDetayId integer
+          CariId integer
+          BirimId decimal
+          MalzemeId integer
+          SiraNo integer
+          DepoId integer
+          HizmetKartId integer
+          SatirTipi integer
+          TeslimTarihi character
+          DepoKod character
+   -- No customizations; Validation not necessary
+
+** Processing: C:\OpenEdge\BarsetProxy\Vardiyalar.r ...
+   -- Parsing r-code ...
+       MAIN C:\OpenEdge\barset\Prosedurler\Vardiyalar.p 
+          OUTPUT VardiyalarDS DATASET
+          INPUT xKod CHARACTER
+          INPUT xAciklama CHARACTER
+          INPUT Firma CHARACTER
+          INPUT Limit INTEGER
+       TABLE: Vardiyalar
+          VardiyaId integer
+          VardiyaKod character
+          Aciklama character
+          TakvimKod character
+          Baslangic integer
+          Bitis integer
+          NetSure integer
+          Baslangic2 character
+          Bitis2 character
+          BrutSure integer
+   -- No customizations; Validation not necessary
+
+** Processing persistent procedures ...
+
+** Checking method and parameter names ...
+
+** Generating .NET proxies ...
+   Creating AssemblyInfo.cs ...
+   Creating AletlerDSSchema.cs ...
+   Creating AlisIrsaliyeDSSchema.cs ...
+   Creating NakliyecilerDSSchema.cs ...
+   Creating CarilerDSSchema.cs ...
+   Creating DepolarDSSchema.cs ...
+   Creating DuruslarDSSchema.cs ...
+   Creating FasonGelisDSSchema.cs ...
+   Creating FasonGidisDSSchema.cs ...
+   Creating SayimlarDSSchema.cs ...
+   Creating StokHareketDSSchema.cs ...
+   Creating HareketlerDSSchema.cs ...
+   Creating HurdalarDSSchema.cs ...
+   Creating xIrsaliyeDetayDSSchema.cs ...
+   Creating V_IsEmirleriDSSchema.cs ...
+   Creating RecetelerDSSchema.cs ...
+   Creating IstasyonlarDSSchema.cs ...
+   Creating IrsaliyelerDSSchema.cs ...
+   Creating KaliteBelgeleriDSSchema.cs ...
+   Creating MalzemeBirimDSSchema.cs ...
+   Creating MalzemelerDSSchema.cs ...
+   Creating PersonellerDSSchema.cs ...
+   Creating RafHareketDSSchema.cs ...
+   Creating RaflarDSSchema.cs ...
+   Creating SevkEmirleriDSSchema.cs ...
+   Creating SevkEmriDetaylariDSSchema.cs ...
+   Creating SevklerDSSchema.cs ...
+   Creating SiparisOkunanlarDSSchema.cs ...
+   Creating xStokHareketDSSchema.cs ...
+   Creating OperasyonDSSchema.cs ...
+   Creating IscilikDSSchema.cs ...
+   Creating DurusDSSchema.cs ...
+   Creating HurdaDSSchema.cs ...
+   Creating AletDSSchema.cs ...
+   Creating MalzemeDSSchema.cs ...
+   Creating KayitDSSchema.cs ...
+   Creating SiparislerDSSchema.cs ...
+   Creating SiparisOkunanlarDS2Schema.cs ...
+   Creating VardiyalarDSSchema.cs ...
+   Creating entegre.cs ...
+   Creating strongly typed dataset classes ...
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AletlerDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AletlerDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AletlerDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AletlerDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AlisIrsaliyeDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AlisIrsaliyeDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AlisIrsaliyeDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AlisIrsaliyeDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\NakliyecilerDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\NakliyecilerDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\NakliyecilerDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\NakliyecilerDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\CarilerDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\CarilerDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\CarilerDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\CarilerDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DepolarDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DepolarDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DepolarDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DepolarDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DuruslarDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DuruslarDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DuruslarDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DuruslarDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\FasonGelisDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\FasonGelisDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\FasonGelisDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\FasonGelisDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\FasonGidisDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\FasonGidisDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\FasonGidisDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\FasonGidisDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SayimlarDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SayimlarDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SayimlarDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SayimlarDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\StokHareketDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\StokHareketDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\StokHareketDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\StokHareketDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HareketlerDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HareketlerDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HareketlerDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HareketlerDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HurdalarDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HurdalarDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HurdalarDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HurdalarDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\xIrsaliyeDetayDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\xIrsaliyeDetayDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\xIrsaliyeDetayDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\xIrsaliyeDetayDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\V_IsEmirleriDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\V_IsEmirleriDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\V_IsEmirleriDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\V_IsEmirleriDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RecetelerDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RecetelerDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RecetelerDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RecetelerDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IstasyonlarDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IstasyonlarDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IstasyonlarDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IstasyonlarDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IrsaliyelerDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IrsaliyelerDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IrsaliyelerDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IrsaliyelerDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\KaliteBelgeleriDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\KaliteBelgeleriDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\KaliteBelgeleriDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\KaliteBelgeleriDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemeBirimDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemeBirimDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemeBirimDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemeBirimDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemelerDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemelerDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemelerDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemelerDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\PersonellerDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\PersonellerDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\PersonellerDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\PersonellerDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RafHareketDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RafHareketDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RafHareketDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RafHareketDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RaflarDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RaflarDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RaflarDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RaflarDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevkEmirleriDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevkEmirleriDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevkEmirleriDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevkEmirleriDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevkEmriDetaylariDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevkEmriDetaylariDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevkEmriDetaylariDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevkEmriDetaylariDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevklerDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevklerDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevklerDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevklerDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparisOkunanlarDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparisOkunanlarDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparisOkunanlarDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparisOkunanlarDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\xStokHareketDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\xStokHareketDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\xStokHareketDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\xStokHareketDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\OperasyonDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\OperasyonDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\OperasyonDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\OperasyonDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IscilikDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IscilikDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IscilikDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IscilikDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DurusDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DurusDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DurusDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DurusDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HurdaDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HurdaDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HurdaDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HurdaDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AletDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AletDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AletDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AletDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemeDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemeDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemeDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemeDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\KayitDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\KayitDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\KayitDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\KayitDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparislerDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparislerDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparislerDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparislerDS.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparisOkunanlarDS2.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparisOkunanlarDS2Schema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparisOkunanlarDS2.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparisOkunanlarDS2.xsd 
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\VardiyalarDS.exe C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\VardiyalarDSSchema.cs 
+       C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\VardiyalarDS.exe 
+       c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\xsd.exe /d /n:entegretor.StrongTypesNS C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\VardiyalarDS.xsd 
+   Compiling .NET proxies and creating .dll ...
+       c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe /t:library "/r:C:\Progress\OpenEdge\dotnet\deploy\signed\Progress.o4glrt.dll" /out:C:\OpenEdge\BarsetProxy\Output\entegretor\entegre.dll C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AletlerDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AlisIrsaliyeDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\NakliyecilerDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\CarilerDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DepolarDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DuruslarDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\FasonGelisDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\FasonGidisDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SayimlarDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\StokHareketDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HareketlerDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HurdalarDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\xIrsaliyeDetayDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\V_IsEmirleriDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RecetelerDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IstasyonlarDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IrsaliyelerDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\KaliteBelgeleriDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemeBirimDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemelerDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\PersonellerDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RafHareketDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\RaflarDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevkEmirleriDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevkEmriDetaylariDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SevklerDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparisOkunanlarDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\xStokHareketDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\OperasyonDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\IscilikDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\DurusDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\HurdaDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\AletDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\MalzemeDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\KayitDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparislerDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\SiparisOkunanlarDS2.cs C:\OpenEdge\BarsetProxy\Output\entegretor\StrongTypesNS\VardiyalarDS.cs C:\OpenEdge\BarsetProxy\Output\entegretor\entegre.cs C:\OpenEdge\BarsetProxy\Output\entegretor\AssemblyInfo.cs 
+   Deleting intermediate files ...
+
+** Generation complete

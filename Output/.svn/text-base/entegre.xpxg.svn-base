@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<WSAD xmlns="urn:schemas-progress-com:WSAD:0009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AppObject>
+    <PGVersion>
+      <PXGVersion>03</PXGVersion>
+    </PGVersion>
+    <PGGenInfo isSessionFree="false">
+      <Author>mikrobar</Author>
+      <VersionString>1.0.20</VersionString>
+      <VersionNumber>1</VersionNumber>
+      <Package />
+      <Service>viko</Service>
+      <WorkDir>C:\OpenEdge\barset\proc\</WorkDir>
+      <VerboseLogging>true</VerboseLogging>
+      <SaveBeforeGen>true</SaveBeforeGen>
+      <DotNetClient>true</DotNetClient>
+      <JavaClient>false</JavaClient>
+      <WebServicesClient>false</WebServicesClient>
+      <ESBClient>false</ESBClient>
+      <ESBClient2>false</ESBClient2>
+      <UserDefinedAppService>true</UserDefinedAppService>
+      <JavaCompilerType>1</JavaCompilerType>
+      <JavaCompiler>&lt;Install Dir&gt;\jdk\bin\javac</JavaCompiler>
+      <JavaSwitches />
+      <JavaClasspathSwitch>-classpath</JavaClasspathSwitch>
+      <JavaClasspath>&lt;Proxy Dir&gt;;&lt;Install Dir&gt;\java\progress.jar;&lt;Install Dir&gt;\java\messages.jar;;&lt;Default classes.zip&gt;</JavaClasspath>
+      <DotNetCompilerType>3</DotNetCompilerType>
+      <DotNetCompiler>c:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe</DotNetCompiler>
+      <DotNetSwitches />
+      <DotNetXSDGenerator>C:\Program Files\Microsoft SDKs\Windows\v6.0A\Bin\xsd.exe</DotNetXSDGenerator>
+      <DotNetNamespace>entegretor</DotNetNamespace>
+      <DotNetTitle />
+      <DotNetVersion />
+      <DotNetDesc />
+      <DotNetCompany />
+      <DotNetProduct />
+      <DotNetPublicKey />
+      <DotNetDelaySign>false</DotNetDelaySign>
+      <DotNetRuntime>digitally signed</DotNetRuntime>
+      <DotNetDataSetNamespace>entegretor.StrongTypesNS</DotNetDataSetNamespace>
+      <DNUseDefaultDSNamespace>true</DNUseDefaultDSNamespace>
+      <DNUseNamespaceAsDirs>true</DNUseNamespaceAsDirs>
+      <DotNetUseNullableTypes>false</DotNetUseNullableTypes>
+    </PGGenInfo>
+    <DeploymentWizard>
+      <CurrentEncoding>1</CurrentEncoding>
+      <SoapEndpointURL>http://www.tempuri.org/wsa/wsa1</SoapEndpointURL>
+      <WebServiceNamespace userDefined="true">urn:tempuri-org</WebServiceNamespace>
+      <SoapAction appendToSoapAction="false" />
+      <ConnectReturnString userDefined="false" />
+      <TestWSDL bGen="true" RPCEncoded="true" RPCLiteral="false" DocLiteral="false" />
+      <ESBEncoding>1</ESBEncoding>
+      <EntryEndpoint useDefault="true" />
+      <FaultEndpoint useDefault="true" />
+      <RejectedEndpoint useDefault="true" />
+      <Container />
+      <AppserverURL>AppServerDC://localhost:3091</AppserverURL>
+      <FileName overWrite="false">entegre</FileName>
+      <ResourceDirectory>/Resources/OpenEdgeServices</ResourceDirectory>
+      <SonicAppService useFileSystem="false" deployToDS="false" createXAR="false">
+        <ResourceDirectory overWrite="false" />
+        <XARName />
+      </SonicAppService>
+      <SonicConnectionInfo>
+        <SonicURL>tcp://localhost:2506</SonicURL>
+        <SonicDomain>Domain1</SonicDomain>
+        <User>Administrator</User>
+        <Password />
+      </SonicConnectionInfo>
+    </DeploymentWizard>
+    <Name>entegre</Name>
+    <ProPath>C:\OpenEdge\barset\</ProPath>
+    <HelpString />
+    <ODLHelpString />
+    <ObjectType>false</ObjectType>
+    <AllowUnknown>false</AllowUnknown>
+    <IsTTResultSet>false</IsTTResultSet>
+    <WriteDatasetBeforeImage>false</WriteDatasetBeforeImage>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Aletler</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>ALIS_IRS</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Araclar</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>BirimGuncelle</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Cariler</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Depolar</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Duruslar</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>ErpReceteDegistir</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>FasonCikisSil</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>FasonDonus</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>FasonDonusSil</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>FasonGidis</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>FiiliSayimKaydet</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>hareket_stok</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Hareketler</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Hurdalar</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>IrsaliyeKaydi</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>IsEmirleri</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>IsEmriDetaylari</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>IsEmriReceteleri</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Istasyonlar</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>irs_delete</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>irs_select</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>KaliteBelgeleri</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>KonsinyeCikis</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>KonsinyeCikisSil</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>log_oku</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Login</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>MalzemeBirimler</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Malzemeler</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Nakliyeciler</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>NakliyeTipleri</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Personeller</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>RafHareket</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Raflar</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>SevkEmirleri</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>SevkEmriDetaylari</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>SevkEmriSevk</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>SiparisOkunanlarCari</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>StokHareket</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>StokHareketSil</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>UretimKaydi</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>UretimKaydiGuncelle</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>UretimKaydiSil</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>UretimMalzemeleri</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>V_Siparisler</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>V_SiparisOkunanlar</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+    <Procedure isPersistent="false" useFullName="false">
+      <Name>Vardiyalar</Name>
+      <ProcPath />
+      <ProPath>C:\OpenEdge\barset\</ProPath>
+    </Procedure>
+  </AppObject>
+</WSAD>

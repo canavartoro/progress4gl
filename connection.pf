@@ -1,0 +1,14 @@
+-db uyum2011
+-N TCP
+-H localhost
+-S 599
+-ld entegre
+-inp 32000
+-tok 3500
+-s 20000
+-db log2012
+-N TCP
+-H localhost
+-S 597
+-ld uyumlog
+-T c:\winnt\temp

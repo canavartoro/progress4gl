@@ -1,0 +1,13 @@
+/* ePageSize.p */
+DEFINE VARIABLE cLastState AS CHARACTER NO-UNDO.
+DEFINE VARIABLE CSZ AS CHARACTER FORMAT 'x(40)' NO-UNDO.
+
+OUTPUT TO TERMINAL PAGE-SIZE 16.
+
+ DISPLAY "Customer.NAME" 
+            "City" + ", " + "State" + " " + "PostalCode" @ CSZ.
+
+OUTPUT CLOSE.
+
+
+MESSAGE CSZ VIEW-AS ALERT-BOX.

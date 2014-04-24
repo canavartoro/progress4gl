@@ -1,0 +1,235 @@
+
+ON FIND OF depo  OVERRIDE DO: END.
+
+DEF TEMP-TABLE Raflar
+    FIELD DepoId AS INTEGER
+    FIELD DepoKod AS CHARACTER FORMAT "X(32)":U
+    FIELD DepoAd AS CHARACTER
+    FIELD RafId AS INTEGER LABEL "Raf Id" 
+    FIELD RafKod AS CHARACTER FORMAT "X(32)":U
+    FIELD Aciklama AS CHARACTER FORMAT "X(127)":U
+    FIELD HiyerArsi AS INTEGER
+    FIELD Seviye AS INTEGER
+    FIELD Rapor AS LOGICAL FORMAT "1/0"
+    FIELD Barkod AS CHARACTER FORMAT "X(64)":U
+    FIELD Sayim AS LOGICAL FORMAT "1/0"
+    FIELD EksiStok AS LOGICAL FORMAT "1/0"
+    FIELD Sevkiyat AS LOGICAL FORMAT "1/0"
+    FIELD IstasyonMu AS LOGICAL FORMAT "1/0"
+    INDEX raf_id IS UNIQUE RafId ASCENDING.
+
+DEFINE OUTPUT PARAMETER TABLE FOR Raflar.
+
+DEFINE INPUT PARAMETER FirmaKod AS CHARACTER.
+DEFINE INPUT PARAMETER DepoId AS INTEGER INITIAL -1.
+DEFINE INPUT PARAMETER DepoKod AS CHARACTER INITIAL -1.
+DEFINE INPUT PARAMETER RafKod AS CHARACTER INITIAL -1.
+DEFINE INPUT PARAMETER hiyer_arsi AS INTEGER INITIAL -1.
+DEFINE INPUT PARAMETER limit AS INTEGER.
+
+DEFINE VARIABLE xkoridorId AS INTEGER INITIAL -1.
+DEFINE VARIABLE xbolumId AS INTEGER INITIAL -1.
+DEFINE VARIABLE xseviye AS INTEGER INITIAL -1.
+DEFINE VARIABLE rowlimit AS INTEGER INITIAL 0.
+    
+/*Depo secilmisse*/
+IF DepoKod NE "" OR DepoId > 0 THEN DO :
+        
+        FOR EACH depo WHERE firma_kod = FirmaKod AND aktif_pasif = FALSE AND (RECID(depo) = DepoId OR DepoId = 0) AND 
+            (depo.depo_kod BEGINS DepoKod OR (DepoKod EQ "" AND RafKod EQ "")) NO-LOCK BY depo.depo_kod:
+                
+            CREATE Raflar.
+            ASSIGN 
+                Raflar.DepoId = RECID(depo)
+                Raflar.DepoKod = depo.depo_kod
+                Raflar.DepoAd = depo.depo_ad
+                Raflar.RafId = RECID(depo)
+                Raflar.RafKod = depo.depo_kod
+                Raflar.Aciklama = depo.depo_ad
+                Raflar.HiyerArsi = -1
+                Raflar.Seviye = 0
+                Raflar.Rapor = FALSE
+                Raflar.Barkod = depo.depo_kod
+                Raflar.Sayim = FALSE
+                Raflar.EksiStok = IF depo.eksi_stok EQ 'Hayýr' THEN FALSE ELSE TRUE
+                Raflar.Sevkiyat = TRUE
+                Raflar.IstasyonMu = FALSE.
+            RELEASE Raflar.
+        
+            IF rowlimit > limit THEN DO:
+                LEAVE.
+            END.
+            rowlimit = rowlimit + 1.
+        
+        END.
+            
+        rowlimit = 0.
+
+        FOR EACH is_istasyon WHERE is_istasyon.firma_kod = FirmaKod AND is_istasyon.aktif_pasif = "Aktif" NO-LOCK, 
+            EACH depo OF is_istasyon  WHERE (RECID(depo) = DepoId OR DepoId = 0) AND (depo.depo_kod BEGINS DepoKod OR DepoKod EQ "") AND
+            (is_istasyon.istasyon_kod BEGINS RafKod OR DepoKod EQ "") NO-LOCK BY is_istasyon.istasyon_kod:    
+        
+            CREATE Raflar.
+            ASSIGN 
+                Raflar.DepoId = RECID(depo)
+                Raflar.DepoKod = depo.depo_kod
+                Raflar.DepoAd = depo.depo_ad
+                Raflar.RafId = RECID(is_istasyon)
+                Raflar.RafKod = is_istasyon.istasyon_kod
+                Raflar.Aciklama = is_istasyon.istasyon_ad
+                Raflar.HiyerArsi = RECID(depo)
+                Raflar.Seviye = 1
+                Raflar.Rapor = FALSE
+                Raflar.Barkod = is_istasyon.istasyon_kod
+                Raflar.Sayim = FALSE
+                Raflar.EksiStok = IF depo.eksi_stok EQ 'Hayýr' THEN FALSE ELSE TRUE
+                Raflar.Sevkiyat = FALSE
+                Raflar.IstasyonMu = TRUE.
+            RELEASE Raflar.
+        
+            IF rowlimit > limit THEN DO:
+                LEAVE.
+            END.
+            rowlimit = rowlimit + 1.
+        
+        END.
+        
+END.
+
+rowlimit = 0.
+/*
+Depo 1 seviye
+Bolum varsa HiyerArsi bolum id HiyerArsi yok sa yeni raf, 3 Seviye
+*/
+
+FOR EACH raf WHERE raf.firma_kod = FirmaKod NO-LOCK, 
+    EACH depo OF raf WHERE (RECID(depo) = DepoId OR DepoId = 0) AND (depo.depo_kod BEGINS DepoKod OR DepoKod EQ "") AND
+    (raf.koridor BEGINS RafKod OR RafKod EQ "") NO-LOCK BY raf.depo_kod BY raf.koridor BY raf.bolum:
+
+    xbolumId = -1.
+    xkoridorId = -1.
+    /*DepoId = RECID(depo).*/
+
+    CREATE Raflar.
+        ASSIGN 
+            Raflar.DepoId = RECID(depo)
+            Raflar.DepoKod = depo.depo_kod
+            Raflar.DepoAd = depo.depo_ad
+            Raflar.RafId = RECID(raf)
+            Raflar.RafKod = raf.raf_kod
+            Raflar.Aciklama = raf.raf_ad
+            Raflar.HiyerArsi = hiyer_arsi
+            Raflar.Seviye = xseviye
+            Raflar.Rapor = FALSE
+            Raflar.Barkod = raf.raf_kod
+            Raflar.Sayim = FALSE
+            Raflar.EksiStok = IF depo.eksi_stok EQ 'Hayýr' THEN FALSE ELSE TRUE
+            Raflar.Sevkiyat = FALSE
+            Raflar.IstasyonMu = FALSE.
+            RELEASE Raflar.
+        /*MESSAGE raf.bolum BolumId VIEW-AS ALERT-BOX ERROR TITLE "Dikkat".*/
+
+        IF rowlimit > limit THEN DO:
+            LEAVE.
+        END.
+        rowlimit = rowlimit + 1.
+
+    /*MESSAGE raf.koridor VIEW-AS ALERT-BOX ERROR TITLE "Dikkat-1".*/
+
+    /*IF raf.koridor EQ ? AND LENGTH(raf.koridor) > 0 THEN DO:
+
+        FIND FIRST Raflar NO-LOCK WHERE Raflar.RafKod EQ raf.koridor AND Raflar.DepoId EQ DepoId NO-ERROR.
+
+        IF NOT AVAILABLE Raflar THEN DO:
+            CREATE Raflar.
+                ASSIGN
+                    Raflar.DepoId = DepoId
+                    Raflar.DepoKod = depo.depo_kod
+                    Raflar.DepoAd = depo.depo_ad
+                    Raflar.RafKod = raf.koridor
+                    Raflar.Aciklama = raf.koridor
+                    Raflar.HiyerArsi = DepoId
+                    Raflar.Seviye = 1
+                    Raflar.Rapor = FALSE
+                    Raflar.Barkod = raf.koridor
+                    Raflar.Sayim = FALSE
+                    Raflar.EksiStok = IF depo.eksi_stok EQ 'Hayýr' THEN FALSE ELSE TRUE
+                    Raflar.Sevkiyat = FALSE
+                    Raflar.IstasyonMu = FALSE.
+                    Raflar.RafId = RECID(Raflar).
+                    xkoridorId = RECID(Raflar).
+                    RELEASE Raflar.
+        END.
+        ELSE DO:
+            xkoridorId = RECID(Raflar).
+        END.
+    END.*/
+
+    /*MESSAGE raf.bolum VIEW-AS ALERT-BOX ERROR TITLE "Dikkat-1".*/
+    /*IF raf.bolum NE ? AND LENGTH(raf.bolum) > 0 THEN DO:
+
+        FIND FIRST Raflar NO-LOCK WHERE Raflar.RafKod EQ raf.bolum AND Raflar.DepoId EQ DepoId NO-ERROR.
+
+        IF NOT AVAILABLE Raflar THEN DO:
+
+                CREATE Raflar.
+                    ASSIGN 
+                        Raflar.DepoId = DepoId
+                        Raflar.DepoKod = depo.depo_kod
+                        Raflar.DepoAd = depo.depo_ad
+                        Raflar.RafKod = raf.bolum
+                        Raflar.Aciklama = raf.bolum
+                        Raflar.HiyerArsi = IF xkoridorId > 0 THEN xkoridorId ELSE RECID(depo)
+                        Raflar.Seviye = IF xkoridorId > 0 THEN 2 ELSE 1
+                        Raflar.Rapor = FALSE
+                        Raflar.Barkod = raf.bolum
+                        Raflar.Sayim = FALSE
+                        Raflar.EksiStok = IF depo.eksi_stok EQ 'Hayýr' THEN FALSE ELSE TRUE
+                        Raflar.Sevkiyat = FALSE
+                        Raflar.IstasyonMu = FALSE.
+                        Raflar.RafId = RECID(Raflar).
+                        xbolumId = RECID(Raflar).
+                    RELEASE Raflar.
+
+        END.
+        ELSE DO:
+            xbolumId = RECID(Raflar).
+        END.
+
+        IF xbolumId > 0 THEN DO:
+            hiyer_Arsi = xbolumId.
+            xseviye = 2.
+        END.
+        ELSE DO:
+            hiyer_arsi = IF xkoridorId > 0 THEN xkoridorId ELSE RECID(depo).
+            xseviye = IF xkoridorId > 0 THEN 2 ELSE 1.
+        END.
+            
+        CREATE Raflar.
+            ASSIGN 
+                Raflar.DepoId = DepoId
+                Raflar.DepoKod = depo.depo_kod
+                Raflar.DepoAd = depo.depo_ad
+                Raflar.RafId = RECID(raf)
+                Raflar.RafKod = raf.raf_kod
+                Raflar.Aciklama = raf.raf_ad
+                Raflar.HiyerArsi = hiyer_arsi
+                Raflar.Seviye = xseviye
+                Raflar.Rapor = FALSE
+                Raflar.Barkod = raf.raf_kod
+                Raflar.Sayim = FALSE
+                Raflar.EksiStok = IF depo.eksi_stok EQ 'Hayýr' THEN FALSE ELSE TRUE
+                Raflar.Sevkiyat = FALSE
+                Raflar.IstasyonMu = FALSE.
+                RELEASE Raflar.
+
+        IF rowlimit > limit THEN DO:
+            LEAVE.
+        END.
+        rowlimit = rowlimit + 1.
+
+    END.*/       
+
+END.
+
+ON FIND OF depo REVERT.
